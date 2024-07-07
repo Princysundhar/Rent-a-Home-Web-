@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Solo Profile Form a Flat Responsive Widget Template :: w3layouts</title>
+    <!-- Meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Solo Profile Form Responsive Widget, Audio and Video players, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
+    <script>
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- Meta tags -->
+    <!-- font-awesome icons -->
+    <link href="/static/user_temp/css/fontawesome-all.min.css" rel="stylesheet" type="text/css" media="all">
+    <!-- //font-awesome icons -->
+    <!--stylesheets-->
+    <link href="/static/user_temp/css/style.css" rel='stylesheet' type='text/css' media="all">
+    <!--//style sheet end here-->
+    <link href="//fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
+</head>
+<body style="background-image: url('/static/user_temp/images/bg2.jpg');!important;">
+    <h1 class="header-w3ls">User Signup</h1>
+    <div class="mid-cls" style="background-color: black; opacity: 1; border-radius: 25px;!important;">
+        <form action="/user_register_post" method="post">
+            {% csrf_token %}
+            <div class="main">
+                <div class="icon-head-wthree">
+                    <div class="images-headder">
+                        <div class="wrap-custom-file">
+                            <!-- Static profile icon -->
+                            <label for="image1">
+                                <span><img src="/static/user_temp/images/t2.jpg" alt="Profile Icon" class="image-fluid"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="personal-info">
+                        <p>Gender</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="RadioGroup1" value="option1" checked="">
+                            <label class="form-check-label"> Male </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="RadioGroup1" value="option2" checked="">
+                            <label class="form-check-label"> Female </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-left-to-w3l">
+                    <input type="text" name="textfield" placeholder="Name" required="" style="border-style: solid;border-color: #00B98E; border-radius: 20px!important;">
+                    <div class="clear"></div>
+                </div>
+                <div class="form-left-to-w3l">
+                    <input type="text" name="textfield4" placeholder="Age" required="" style="border-style: solid;border-color: #00B98E; border-radius: 20px!important;">
+                    <div class="clear"></div>
+                </div>
+                <div class="form-left-w3l">
+                    <input type="email" name="textfield2" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" placeholder="Email" required="" style="border-style: solid;border-color: #00B98E; border-radius: 20px!important;">
+                </div>
+                <div class="form-left-to-w3l">
+                    <input type="text" name="textfield3" placeholder="Phone" required="" style="border-style: solid;border-color: #00B98E; border-radius: 20px!important;">
+                    <div class="clear"></div>
+                </div>
+                <div class="form-left-to-w3l">
+                    <input type="text" name="textfield5" placeholder="Place" required="" style="border-style: solid;border-color: #00B98E; border-radius: 20px!important;">
+                    <div class="clear"></div>
+                </div>
+                <div class="form-left-to-w3l">
+                    <input type="text" name="textfield6" placeholder="Post" required="" style="border-style: solid;border-color: #00B98E; border-radius: 20px!important;">
+                    <div class="clear"></div>
+                </div>
+                <div class="form-left-to-w3l">
+                    <input type="text" name="textfield7" placeholder="Pin" required="" style="border-style: solid;border-color: #00B98E; border-radius: 20px!important;">
+                    <div class="clear"></div>
+                </div>
+                <div class="form-right-w3ls">
+                    <input type="password" name="textfield8" placeholder="Password" required="" style="border-style: solid;border-color: #00B98E; border-radius: 20px!important;">
+                    <div class="clear"></div>
+                </div>
+                <div class="btnn">
+                    <button type="submit" style="background-color: #00B98E">Sign Up</button><br>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="copy">
+        <p>&copy;2018 Solo profile Form. All Rights Reserved | Design by <a href="http://www.W3Layouts.com" target="_blank">W3Layouts</a></p>
+    </div>
+    <!--js working-->
+    <script src='/static/user_temp/js/jquery-2.2.3.min.js'></script>
+    <!--//js working-->
+</body>
+</html>

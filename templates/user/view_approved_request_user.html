@@ -1,0 +1,44 @@
+{% extends 'user/user_index.html' %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" class="table table-bordered">
+    <tr style="color: black;background-color:#00B98E">
+      <th scope="col">Sl.No</th>
+      <th scope="col">Home Details</th>
+      <th scope="col">User Details</th>
+      <th scope="col">Date</th>
+      <th scope="col">Status</th>
+      <th scope="col">Payment Status</th>
+      <th scope="col">Payment Date</th>
+      <th scope="col">Amount</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ forloop.counter }}</td>
+      <td>&nbsp;Name:{{ i.HOME.house_name }}<br>Image:<img src="{{ i.HOME.image }}" width="100px" height="100px" alt=""/></td>
+      <td>&nbsp;Name :{{ i.USER.name }}<br>Contact:{{ i.USER.contact }}</td>
+      <td>&nbsp;{{ i.date }}</td>
+      <td>&nbsp;{{ i.status }}</td>
+      <td>&nbsp;{{ i.pay_status }}</td>
+      <td>&nbsp;{{ i.pay_date }}</td>
+      <td>&nbsp;{{ i.HOME.amount }}</td>
+      <td><p><a href="/make_payment/{{ i.id }}/{{ i.HOME.amount }}" class="btn btn-outline-success">Make Payment</a>
+      <a href="/view_document/{{ i.id }}#aa" class="btn btn-outline-success">View Document</a>
+      </td>
+        {% endfor %}
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

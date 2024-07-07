@@ -1,0 +1,102 @@
+{#{% extends 'user/user_index.html' %}#}
+{#{% block body %}#}
+{##}
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>House List</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="">#}
+{#  {% csrf_token %}#}
+{#  <table width="100%" border="1" class="table table-bordered">#}
+{#    <tr style="color: black; background-color: #00B98E">#}
+{#      <th scope="col">Sl.No</th>#}
+{#      <th scope="col">House Name</th>#}
+{#      <th scope="col">House No</th>#}
+{#      <th scope="col">Image</th>#}
+{#      <th scope="col">Amount</th>#}
+{#      <th scope="col">Square Feet</th>#}
+{#      <th scope="col">Rooms</th>#}
+{#      <th scope="col">&nbsp;</th>#}
+{#    </tr>#}
+{#    {% for i in data %}#}
+{#    <tr>#}
+{#      <td>&nbsp;{{ forloop.counter }}</td>#}
+{#      <td>&nbsp;{{ i.house_name }}</td>#}
+{#      <td>&nbsp;{{ i.house_no }}</td>#}
+{#      <td>&nbsp;<img src="{{ i.image }}" width="100px" height="100px" alt=""/></td>#}
+{#      <td>&nbsp;{{ i.amount }}</td>#}
+{#      <td>&nbsp;{{ i.square_feet }}</td>#}
+{#      <td>&nbsp;{{ i.no_of_rooms }}</td>#}
+{#      <td>#}
+{#        <a href="http://www.google.com/maps/?q={{ i.latitude }},{{ i.longitude }}" class="btn btn-outline-success">Track</a>#}
+{#           {% if i.id not in requested_home_ids %}#}
+{#          <a href="/send_request/{{ i.id }}">Send Request</a>#}
+{#        {% else %}#}
+{#          Request Sent#}
+{#        {% endif %}#}
+{##}
+{#      </td>#}
+{#    </tr>#}
+{#    {% endfor %}#}
+{#  </table>#}
+{#</form>#}
+{#</body>#}
+{#</html>#}
+{#{% endblock %}#}
+{##}
+{##}
+{##}
+
+{% extends 'user/user_index.html' %}
+{% block body %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>House List</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  {% csrf_token %}
+  <table width="100%" border="1" class="table table-bordered">
+    <tr style="color: black; background-color: #00B98E">
+      <th scope="col">Sl.No</th>
+      <th scope="col">House Name</th>
+      <th scope="col">House No</th>
+      <th scope="col">Image</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Square Feet</th>
+      <th scope="col">Rooms</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.house_name }}</td>
+      <td>&nbsp;{{ i.house_no }}</td>
+      <td>&nbsp;<img src="{{ i.image }}" width="100px" height="100px" alt=""/></td>
+      <td>&nbsp;{{ i.amount }}</td>
+      <td>&nbsp;{{ i.square_feet }}</td>
+      <td>&nbsp;{{ i.no_of_rooms }}</td>
+      <td>
+        <a href="http://www.google.com/maps/?q={{ i.latitude }},{{ i.longitude }}" class="btn btn-outline-success">Track</a>
+           {% if i.request_status == '0' %}
+          <a href="/send_request/{{ i.id }}" class="btn btn-outline-success">Send Request</a>
+        {% else %}
+          Request Sent
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}
+
